@@ -1,0 +1,52 @@
+<h2 class="page-title">SpaceX Mission Details</h2>
+<div class="button-wrapper">
+  <button class="back-button" mat-button color="accent" (click)="goBack()">Back</button>
+</div>
+<div *ngIf="mission">
+  <div class="main-card">
+    <mat-card class="example-card">
+        <img class="example-header-image" src="{{ mission.links.mission_patch }}" />
+
+        <mat-card-title>
+          <strong>Mission - {{ mission.mission_name }}</strong>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <strong>Name:</strong> {{ mission.mission_name }}<br>
+          <strong>Launch year:</strong> {{ mission.launch_year }}
+        </mat-card-subtitle>
+     
+
+      <mat-card-title>
+        <strong>Rocket</strong>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <strong>Name:</strong> {{ mission.rocket.rocket_name }}<br>
+        <strong>Type:</strong> {{ mission.rocket.rocket_type }}
+      </mat-card-subtitle>
+
+      <mat-card-title>
+        <strong>Launch Details</strong>
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ mission.details }}
+      </mat-card-subtitle>
+
+      <mat-card-title>
+        <strong>More information on launch details</strong><br>
+      </mat-card-title>
+
+      <a mat-stroked-button target="_blank" href="{{ mission?.links?.article_link }}">
+        <mat-icon class="blue-icon" aria-hidden="false" aria-label="description icon">description</mat-icon>
+      </a>
+      <a target="_blank" href="{{ mission?.links?.wikipedia }}" mat-stroked-button color="accent">
+        <mat-icon class="red-icon" aria-hidden="false" aria-label="public icon">public</mat-icon>
+      </a>
+      <a target="_blank" href="{{ mission?.links?.video_link }}" mat-stroked-button color="accent">
+        <mat-icon class="orange-icon" aria-hidden="false" aria-label="videocam icon">videocam</mat-icon>
+      </a>
+    </mat-card>
+
+
+
+  </div>
+</div>
